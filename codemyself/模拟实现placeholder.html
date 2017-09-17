@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+        <input type="text" placeholder="请输入内容" />
+        <script>
+        var aIpt=document.getElementsByTagName('input');
+        aIpt[0].onfocus=function(){
+            //如果你之前输入的内容是你自己的，那么不清空
+            //晚自习测试一下value,如果是placeholder体现不出这个if的作用
+            if(this.placehoder=='请输入内容'){
+            this.placeholder='';
+            }
+        }
+        aIpt[0].onblur=function(){
+            //如果没有输入内容，再还原
+
+            if(this.placeholder==''){
+            this.placeholder='请输入内容';
+            }
+        }
+    </script>
+      
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* //没写完 */
+     *{
+            margin: 0;
+     padding: 0; 
+        }
+    img{
+        display: block;
+        margin: 100px auto 0;
+     
+
+    }
+    div{
+        width: 642px;
+        height: 46px;
+        margin:0 auto;
+    }
+    #text{
+     width: 540px;
+     height: 44px;
+     float: left;
+     outline: none;
+     border:1px solid blue;
+    }
+    #but{
+        width: 100px;
+        height: 46px;
+        float: left;
+        color: #fff;
+        background-color: blue;
+        border:none;
+    }
+    
+    </style>
+</head>
+<body>
+    <img src="bd.bmp" />
+    <div>
+    <input type="text" id='text'/>
+    <input type="button" value='百度一下' id='but'>
+</div>
+    <script>
+    var oId=document.getElementById('text');
+    oId.focus();
+    //获取焦点时边框变为蓝色、失去时变为灰色
+    oId.onfocus=function(){
+        this.style.border='1px solid blue';
+    }
+    oId.onblur=function(){
+        this.style.border='1px solid #ccc';
+
+    }
+    </script>
+</body>
+</html>

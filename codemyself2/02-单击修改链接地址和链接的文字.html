@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com" target='_blank'>链接百度</a>
+    <input type="button" value='单击修改链接地址和链接的文字'/>
+<script>
+   var aA=document.getElementsByTagName('a')[0];
+   var aIpt=document.getElementsByTagName('input')[0];
+   aIpt.onclick = function(){
+       aA.herf='http://www.taobao.com';
+       aA.innerHTML='链接淘宝';
+       console.log(aA.herf);
+       console.log(aA.innerHTML);
+   }
+   console.log(aA.herf);
+   console.log(aA.innerHTML);
+</script>
+</body>
+</html>

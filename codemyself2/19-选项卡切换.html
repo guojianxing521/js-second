@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding:0;
+				margin:0;
+			}
+			img{
+				display:none;
+			
+			}
+			/*input{
+				background-color:blue;
+			}*/
+		</style>
+	</head>
+	<body>
+		<input type="button" value="图片1" />
+		<input type="button" value="图片2" />
+		<input type="button" value="图片3" />
+		<input type="button" value="图片4" /><br />
+		<img src="image/1-small.jpg" alt="" />
+		<img src="image/2-small.jpg" alt="" />
+		<img src="image/3-small.jpg" alt="" />
+		<img src="image/4-small.jpg" alt="" />
+		<script type="text/javascript">
+			var aIpt = document.getElementsByTagName('input');
+			var aImg = document.getElementsByTagName('img');
+			aImg[0].style.display= 'block';
+			for(var i=0;i<aIpt.length;i++){
+				aIpt[i].index=i;
+				aIpt[i].onmouseover = function(){
+					for(var i=0;i<aImg.length;i++){
+						aImg[i].style.display='none';
+						aIpt[i].style.backgroundColor = '';
+				}
+				this.style.backgroundColor = 'pink';
+				aImg[this.index].style.display='block';
+				
+		}
+	}
+		</script>
+	</body>
+</html>

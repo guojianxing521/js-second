@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	img{
+    		width: 268px;
+    		display: block;
+    		margin: 100px auto 0;
+    		
+    	}
+    	div{
+    		width: 650px;
+    		height: 43px;
+    		margin: 0 auto;
+    	}
+    	.ipt1{
+    		width: 540px;
+    		height: 36px;
+    		float: left;
+    		outline: none;
+            border: 1px solid #3385ff;
+    		
+    	}
+    	.ipt2{
+    		width: 100px;
+    		height: 38px;
+    		float: left;
+    		background-color: #3385ff;
+    		border: 0;
+    		outline: none;
+    		color: #fff;
+    	}
+    </style>
+</head>
+<body>
+    <img src="bd.bmp"  />
+    <div>
+    <input type="text" class="ipt1"/>
+    <input type="button" value="百度一下" class="ipt2"/>
+    </div>
+    <script type="text/javascript">
+    	var aIpt = document.getElementsByTagName('input')[0];
+    	aIpt.focus();
+    	aIpt.onblur  =  function(){
+    		this.style.border='1px solid #ccc';
+    	}
+    	aIpt.onfocus = function(){
+    		this.style.border='1px solid #3385ff';
+    	}
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class='aa' def='我是自定义属性'>点我</div>
+    <script>
+   //
+   var oBox=document.getElementById('box');
+   console.log(oBox.id);
+   oBox.id='haha';
+   oBox.onclick=function(){
+       alert('修改id之后还可以触发');
+   }
+  
+// 如果一个属性不存在，那么它的值为undefined
+  console.log(oBox.def);
+//   //getAttribute方法可以获取自定义属性,也可以获得常规函数
+  console.log(oBox.getAttribute('def'));
+  console.log(oBox.getAttribute('class'));
+  console.log(oBox.className);
+   //我们通过元素，你给它加的属性，这种方式设置属性，可以在js中使用
+   //但是，在页面上（也就是  <div id="box" class='aa' title='盒子' ss='自定义属性'>点我</div>）没有这个自定义属性
+   oBox.abc='哈哈';
+   console.log(oBox.abc);
+  // setAttribute() 可以设置常规属性和自定义属性
+//它添加的自定义属性　可以在页面上生成
+ oBox.setAttribute('ss','你好');
+ oBox.setAttribute('title','盒子');
+//　removeAttribute() 移除属性（常规属性和自定义属性）
+    //   oBox.removeAttribute("title");
+	// 	oBox.removeAttribute("ss");
+    </script>
+</body>
+</html>

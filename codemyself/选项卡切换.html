@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    div{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ccc;
+        display:none;
+    }
+    input{
+        width:50px;
+        height: 30px;
+        background-color: #29d;
+        border:0;
+        outline: none;
+        color: #fff;
+
+    }
+    .active{
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <input type="button"value='袜子'>
+    <input type="button"  value='上衣'>
+    <input type="button" value='牛仔裤'>
+    <div style='display:block'>内容1</div>
+    <div>人呢</div>
+    <div>在这惹</div>
+    <script>
+    var aIpt=document.getElementsByTagName('input');
+    var aDiv=document.getElementsByTagName('div');
+    for(var i=0;i<aIpt.length;i++){
+        //将每一个按钮的索引存起来，存给它自身的一个自定义属性
+        aIpt[i].index=i;
+        aIpt[i].onmouseover=function(){
+           
+         //暴力清除
+        for(var i=0;i<aIpt.length;i++){
+            aIpt[i].className='';
+            aDiv[i].style.display='none';
+        }
+        //让当前的dej1`	q按钮添加一个类,并把盒子显示出来
+         this.className='active';
+         aDiv[this.index].style.display='block';
+    }
+    }
+    
+    </script>
+</body>
+</html>

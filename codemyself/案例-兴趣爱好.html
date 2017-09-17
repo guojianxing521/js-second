@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value='男生爱好'/>
+    <input type="button" value='女生爱好'/>
+    <input type="checkbox" />吃饭
+    <input type="checkbox" />睡觉
+    <input type="checkbox" />看剧
+    <input type="checkbox" />打球
+    <input type="checkbox" />打游戏
+    <input type="checkbox" />写bug
+    <script>
+   
+    var aIpt=document.getElementsByTagName('input');
+    aIpt[0].onclick = function(){
+         //暴力清除
+        for(var j=2;j<aIpt.length;j++){
+            aIpt[j].checked=false;
+        }
+        for(var i=2;i<aIpt.length;i++){
+        if(i!=4){
+            aIpt[i].checked=true;
+        }
+        }
+    }
+    aIpt[1].onclick = function(){
+    
+        //暴力清除
+        for(var j=2;j<aIpt.length;j++){
+            aIpt[j].checked=false;
+        }
+        for(var i=2;i<aIpt.length;i++){
+        if(i!=6){
+            aIpt[i].checked=true;
+        }
+        }
+    }
+    </script>
+    
+</body>
+</html>

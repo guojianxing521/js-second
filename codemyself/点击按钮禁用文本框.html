@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <input type="button" value='禁用'>
+  <input type="text" value='内容'>
+  <script>
+  var aIpt=document.getElementsByTagName('input');
+  aIpt[0].onclick=function(){
+      if(this.value=='禁用'){
+      aIpt[1].disabled=true;
+      this.value='解禁';
+  }else{
+    this.value='禁用';
+    aIpt[1].disabled=false;
+     
+  }
+
+}
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+        margin: 100px auto;
+       /* display: none; */
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value='隐藏' />
+    <div>我是一个漂亮的盒子</div>
+    <script>
+    var aIpt = document.getElementsByTagName('input')[0];
+    var aDiv = document.getElementsByTagName('div')[0];
+    
+  
+    var onoff=true;
+    aIpt.onclick = function (){
+       
+       if(onoff){
+       aDiv.style.display='none';
+       aIpt.value = '显示';
+        }else{
+        aDiv.style.display='block';
+        aIpt.value = '隐藏';
+        }
+        onoff=!onoff;
+    }
+    </script>
+
+</body>
+</html>

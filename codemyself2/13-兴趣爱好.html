@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="男生爱好" />
+		<input type="button" value="女生爱好" />
+		<input type="radio" name='sex' />男生
+		<input type="radio" name='sex' />女生
+		<input type="checkbox" name='box'/>打球
+		<input type="checkbox" name='box'/>看剧
+		<input type="checkbox" name='box'/>打游戏
+		<input type="checkbox" name='box'/>唱歌
+		<input type="checkbox" name='box'/>跳舞
+		<script>
+			var aIpt = document.getElementsByTagName('input');
+		
+				aIpt[0].onclick = function(){
+					for(var i=2;i<aIpt.length;i++){
+						aIpt[i].checked = false;
+					}
+					for(var i=2;i<aIpt.length;i++){
+					
+						if(i==2||i==4||i==6){
+							aIpt[i].checked=true;
+						}
+					}
+				}
+				aIpt[1].onclick = function(){
+					for(var i=2;i<aIpt.length;i++){
+						aIpt[i].checked = false;
+					}
+					for(var i=2;i<aIpt.length;i++){
+						if(i!=2&&i!=4&&i!=6){
+							aIpt[i].checked=true;
+						}
+					}
+				}
+			
+	
+		</script>
+	</body>
+</html>

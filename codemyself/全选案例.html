@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    table {
+				border-collapse: collapse;
+				border-spacing: 0;
+				border: 1px solid #c0c0c0;
+				width: 300px;
+			}
+			
+			th,
+			td {
+				border: 1px solid #d0d0d0;
+				color: #404060;
+				padding: 10px;
+			}
+    
+    </style>
+</head>
+<body>
+    <table>
+      <thead>
+             <th><input type="checkbox" id='theadipt'></th>
+             <th>菜名</th>
+             <th>饭店</th>
+
+      </thead>
+      <tbody>
+      <tr>
+            <td><input type="checkbox" ></td>
+            <td>红烧肉</td>
+            <td>田老师</td>
+
+         </tr>
+         <tr>
+                <td><input type="checkbox"></td>
+                <td>红烧肉</td>
+                <td>田老师</td>
+   
+             </tr>
+             <tr>
+                    <td><input type="checkbox"></td>
+                    <td>红烧肉</td>
+                    <td>田老师</td>
+       
+                 </tr>
+                 <tr>
+                        <td><input type="checkbox"></td>
+                        <td>红烧肉</td>
+						<td>田老师</td>
+           
+                     </tr>
+                    </tbody>
+    </table>
+    <script>
+    var oIpt=document.getElementById('theadipt');
+    var aTbd=document.getElementsByTagName('tbody')[0];
+    var aIpt=aTbd.getElementsByTagName('input');
+    //如果head中的input选中，则下面的input也都选中
+    oIpt.onclick=function(){
+        for(var i=0;i<aIpt.length;i++){
+            aIpt[i].checked=this.checked;
+        }
+    }
+
+ //给tbody中的每个input添加一个点击事件
+    for(var i=0;i<aIpt.length;i++){
+        aIpt[i].onclick=function(){
+            //一单击立马循环input,看是否都被选中
+            //设置一个变量，看是否都为真
+            //都为真就选中oIpt
+            var unoff=true;
+           for(var j=0;j<aIpt.length;j++){
+            if(aIpt[j].checked==false){
+                unoff=false;
+                break;
+            }
+           }
+           oIpt.checked=unoff;
+        }
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .right{
+     color:blue;
+    }
+    .false{
+	color: red;
+	}
+    input{
+       outline: none;
+    }
+    </style>
+</head>
+<body>
+    账号：<input type="text" /><span></span><br>
+    密码：<input type="text" /><span></span>
+    <script>
+        //先获取元素
+        var aIpt=document.getElementsByTagName('input');
+        var aSpan=document.getElementsByTagName('span');
+      //自动获取焦点
+      aIpt[0].focus();
+      //失去焦点时做的事
+    //   aIpt[0].onblur=function(){
+    //       if( aIpt[0].value==''){
+    //       alert('请输入账号');
+    //       }
+    //   }
+      //oninput
+      aIpt[0].onblur=function(){
+        if(this.value==''){
+            aSpan[0].innerHTML='请输入账号';
+           
+      }
+      }
+     aIpt[0].oninput=function(){
+         
+         aSpan[0].innerHTML='长度应该为6~20';
+       
+        if(aIpt[0].value.length<6||aIpt[0].value.length>20){
+            this.style.border='1px solid red';
+            aSpan[0].style.color='red';//看这里
+            // aSpan[0].className='false';
+         }else{
+            this.style.border='1px solid #ccc';
+            aSpan[0].innerHTML='输入正确';
+            // aSpan[0].className = 'right';//和这里，为什么类设置的属性不会覆盖if中设置的style颜色
+            //js的样式优先级比较高
+            aSpan[0].style.color='blue';
+         }
+         
+    }
+    </script>
+ 
+</body>
+</html>

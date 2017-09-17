@@ -1,0 +1,41 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        账号：<input type="text" /><span></span><br>
+        密码：<input type="text" /><span></span>
+        <script>
+            var aSpan=document.getElementsByTagName('span');
+               var aIpt=document.getElementsByTagName('input');
+               //功能：当文本框失去焦点时，判断内容是否为空，为空，弹出一个对话框
+               //失去焦点时，判断输入内容是否符合6-20个字符
+               //input随着你的输入内容就会触发
+            //    aIpt[0].oninput=function(){
+               aIpt[0].onblur=function(){
+                   //简化代码
+                 var str=this.value;
+                   if(str===''){
+                       alert('请您输入内容');
+                    //    this.focus();
+                   }else{
+                       //文本框的内容是字符串，文本都是字符串类型，输入的123也是字符串
+
+                       if(str.length<6||str.length>20){
+                      //让文本框旁边的里面放置一些错误提示内容
+                      aSpan[0].style.color='red';
+                      this.style.border='1px solid red';
+                      aSpan[0].innerHTML='输入内容不符合规则，长度应该为6到20个字符'
+                       }else{
+                        aSpan[0].innerHTML='输入成功';
+                       }
+                   }
+               }
+        </script>
+     
+   </body>
+    </html>
